@@ -17,19 +17,18 @@ export default function Home() {
                     </div></a></button>
                 </div>
                 <div className="flex flex-col items-center">
-                    <div className="grid grid-cols-2 place-items-center h-80 w-80 p-4 rounded-2xl shadow-xl bg-neutral-700 hover:blur-sm relative">
+                    <button><a href="./closet"><div className="grid grid-cols-2 place-items-center h-80 w-80 p-4 rounded-2xl shadow-xl bg-neutral-700 hover:blur-sm relative">
                         <img className="flex items-center justify-around ml-36" src="closeticon.svg"></img>
-                    </div>
+                    </div></a></button>
                 </div>
                 <div className="flex flex-col items-center">
-                    <div className="grid grid-cols-2 place-items-center h-80 w-80 p-4 rounded-2xl shadow-xl bg-neutral-700 hover:blur-sm relative">
+                    <button><a href="./outfits"><div className="grid grid-cols-2 place-items-center h-80 w-80 p-4 rounded-2xl shadow-xl bg-neutral-700 hover:blur-sm relative">
                         <img className="flex items-center justify-around ml-36" src="outfiticon.svg"></img>
-                    </div>
-                </div>
-                <div className="flex flex-col items-center">
-                    <div className="grid grid-cols-2 place-items-center h-80 w-80 p-4 rounded-2xl shadow-xl bg-neutral-700 hover:blur-sm relative">
+                    </div></a></button>
+                </div><div className="flex flex-col items-center">
+                    <button><a href="./createidea"><div className="grid grid-cols-2 place-items-center h-80 w-80 p-4 rounded-2xl shadow-xl bg-neutral-700 hover:blur-sm relative">
                         <img className="flex items-center justify-around ml-36" src="createicon.svg"></img>
-                    </div>
+                    </div></a></button>
                 </div>
             </div>
         </main>

@@ -1,8 +1,7 @@
+import CreateIdea from "../components/CreateIdea";
 import SignOutButton from "../components/SignOutButton";
-import PhotoUpload from "../components/PhotoUpload";
 
-
-export default function Clothes() {
+export default function Create() {
     return (
         <main className="min-h-screen bg-neutral-600 text-neutral-300 relative">
             <div className="absolute top-4 right-4">
@@ -13,8 +12,8 @@ export default function Clothes() {
                 <a className="flex items-center justify-between p-3" href="/">Outfitted</a>
             </div>
             <div>
-                <PhotoUpload/>
+                <CreateIdea/>
             </div>
         </main>
     )
-}           
+}            
