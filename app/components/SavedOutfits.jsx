@@ -12,6 +12,7 @@ const Outfits = () => {
         .from('outfits')
         .select(`
           id,
+          description,
           tops: tops_id ( id, image ),
           pants: pants_id ( id, image ),
           outerwear: outerwear_id ( id, image ),
@@ -33,6 +34,7 @@ const Outfits = () => {
       <div className="grid grid-cols-3 gap-4">
         {outfits.map((outfit) => (
           <div key={outfit.id} className="border p-4">
+            <p className="description">{outfit.description}</p>
             <div className="grid grid-cols-3 gap-4">
               {outfit.tops && <img src={outfit.tops.image} alt="Top" />}
               {outfit.pants && <img src={outfit.pants.image} alt="Pants" />}

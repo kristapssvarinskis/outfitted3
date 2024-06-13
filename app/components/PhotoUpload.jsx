@@ -115,7 +115,7 @@ const Upload = () => {
             {tags.categories.map((tag) => (
               <button
                 key={tag}
-                className={`px-4 py-2 bg-neutral-700 hover:bg-neutral-800 shadow-lg rounded-md ${selectedCategory === tag ? 'bg-neutral-700 text-white' : ''}`}
+                className={`px-4 py-2 bg-neutral-700 hover:bg-neutral-800 shadow-lg rounded-md ${selectedCategory === tag ? 'bg-neutral-800 text-white' : ''}`}
                 onClick={() => setSelectedCategory(tag)}
               >
                 {tag}
@@ -129,7 +129,7 @@ const Upload = () => {
             {tags.colors.map((tag) => (
               <button
                 key={tag}
-                className={`px-4 py-2 bg-neutral-700 hover:bg-neutral-800 shadow-lg rounded-md ${selectedColor === tag ? 'bg-neutral-700 text-white' : ''}`}
+                className={`px-4 py-2 bg-neutral-700 hover:bg-neutral-800 shadow-lg rounded-md ${selectedColor === tag ? 'bg-neutral-800 text-white' : ''}`}
                 onClick={() => setSelectedColor(tag)}
               >
                 {tag}
@@ -143,7 +143,7 @@ const Upload = () => {
             {tags.materials.map((tag) => (
               <button
                 key={tag}
-                className={`px-4 py-2 bg-neutral-700 hover:bg-neutral-800 shadow-lg rounded-md ${selectedMaterial === tag ? 'bg-neutral-700 text-white' : ''}`}
+                className={`px-4 py-2 bg-neutral-700 hover:bg-neutral-800 shadow-lg rounded-md ${selectedMaterial === tag ? 'bg-neutral-800 text-white' : ''}`}
                 onClick={() => setSelectedMaterial(tag)}
               >
                 {tag}
