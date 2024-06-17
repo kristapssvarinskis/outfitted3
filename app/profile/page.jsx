@@ -1,4 +1,5 @@
 import SignOutButton from "../components/SignOutButton";
+import ProfilePage from "../components/ProfilePage";
 
 export default function Home() {
     return (
@@ -9,6 +10,9 @@ export default function Home() {
             <button className="bg-neutral-700 text-neutral-400 font-bold py-2 px-4 rounded hover:bg-neutral-800 absolute top-4 right-36">Profile</button>
             <div className="bg-neutral-600 p-3 h-20 text-2xl border-b-4 border-neutral-700 shadow-lg">
                 <a className="flex items-center justify-between p-3" href="/">Outfitted</a>
+            </div>
+            <div>
+                <ProfilePage/>
             </div>
         </main>
     )

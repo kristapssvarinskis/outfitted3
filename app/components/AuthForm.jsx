@@ -8,6 +8,7 @@ export default function AuthForm(){
     const [isNewUser, setIsNewUser] = useState(false)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [fullName, setFullName] = useState('') // Add full name state
     const [isSigningIn, setIsSigningIn] = useState(false)
     const [isSigningUp, setIsSigningUp] = useState(false)
     const [errorMessage, setErrorMessage] = useState('')
@@ -54,7 +55,22 @@ export default function AuthForm(){
                 setErrorMessage(error.message)
                 setIsSigningUp(false)
             } else if (data.user) {
-                // Notify the user to check their email
+                // Insert the full name into the profiles table
+                const { error: profileError } = await supabase
+                  .from('profiles')
+                  .insert({
+                    user_id: data.user.id,
+                    full_name: fullName,
+                    email: email
+                  });
+
+                if (profileError) {
+                  setErrorMessage(profileError.message);
+                  setIsSigningUp(false);
+                } else {
+                  // Notify the user to check their email
+                  setErrorMessage('Sign up successful! Please check your email to confirm your sign up.');
+                }
             } else {
                 setErrorMessage('Sign up failed: No user data found.')
                 setIsSigningUp(false)
@@ -78,6 +94,15 @@ export default function AuthForm(){
 
     return (
         <form onSubmit={isNewUser ? handleSignUp : handleLogin} className="space-y-8">
+            {isNewUser && (
+                <input
+                    type="text"
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
+                    className="appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-neutral-400 text-gray-900 focus:outline-none focus:ring-neutral-700 focus:border-neutral-700"
+                    placeholder="Full Name"
+                />
+            )}
             <input
                 type="email"
                 value={email}
